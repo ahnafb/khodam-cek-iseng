@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <!-- OG -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Khodam Cek">
+    <meta property="og:url" content="https://khodam-cek.vercel.app">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Ayo cek khodam yang ada di dalam dirimu!">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- CSS Style  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <main class="container">
+        <h2>Khodam Cek</h2>
+        <div class="content">
+            <form id="check-khodam-form">
+                <label for="inputnama">Tulis nama kamu di sini</label>
+                <input id="inputnama" name="inputn" type="text" placeholder="Nama kamu" required>
+                <button id="btn-check" type="submit">CHECK</button>
+            </form>
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Kami sedang memeriksa khodam yang ada di dalam diri kamu</p>
+            </div>
+            <div id="result" class="result" style="display: none;">
+                <p>Khodam yang ada di dalam diri <span id="name-result"></span>:</p>
+                <p class="khodam-result" id="khodam-result"></p>
+                <p>Jangan lupa share ke yang lain agar mereka tahu sosok asli yang ada di dalam diri kamu</p>
+                <!-- <button id="share-btn">Share</button> -->
+                <button id="reset-btn">Ulangi</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
